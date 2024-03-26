@@ -1,6 +1,17 @@
 import { bootstrapApplication } from '@angular/platform-browser';
-import { appConfig } from './app/app.config';
 import { AppComponent } from './app/app.component';
+import { RouterModule } from '@angular/router';
+import { HomeComponent } from './app/pages/home/home.component';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { importProvidersFrom } from '@angular/core';
 
-bootstrapApplication(AppComponent, appConfig)
-  .catch((err) => console.error(err));
+bootstrapApplication(AppComponent, {
+  providers: [
+    importProvidersFrom(
+      RouterModule.forRoot([
+        { path: '', component: HomeComponent, pathMatch: 'full' }
+        // Lägg till ytterligare rutter här
+      ])
+    )
+  ]
+}).catch(err => console.error(err));
