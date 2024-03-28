@@ -49,7 +49,7 @@ class AuthController extends Controller
 
         if (!$user || !Hash::check($fields['password'], $user->password)) {
             return response([
-                "message" => "Credentials not correct"
+                "message" => "Fel lösenord din dräng"
             ], 401);
         }
         $token = $user->createToken('myAppToken')->plainTextToken;
