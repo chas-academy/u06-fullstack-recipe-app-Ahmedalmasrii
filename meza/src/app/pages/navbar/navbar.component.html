@@ -1,4 +1,4 @@
- <mat-sidenav-container class="sidenav-container">
+<!-- <mat-sidenav-container class="sidenav-container">
   <mat-sidenav
     #drawer
     class="sidenav"
@@ -7,8 +7,8 @@
     [mode]="(isHandset$ | async) ? 'over' : 'side'"
     [opened]="(isHandset$ | async) === false"
   >
-    <mat-toolbar>Menu</mat-toolbar>
-    <mat-nav-list>
+    <mat-toolbar class="listrub">Menu</mat-toolbar>
+    <mat-nav-list class="navlista">
       <a mat-list-item href="#">Recipe</a>
       <a mat-list-item href="#">Juice</a>
       <a mat-list-item href="#">Food</a>
@@ -30,11 +30,24 @@
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       }
-      
+
       <span>Meza</span>
     </mat-toolbar>
-    <main>
+    <main >
       <router-outlet></router-outlet>
     </main>
   </mat-sidenav-content>
-</mat-sidenav-container> 
+</mat-sidenav-container> -->
+<header>
+  <nav>
+    <div class="logo">Meza</div>
+    <ul>
+      <li><a href="#">Recipe</a></li>
+      <li><a href="#">Juice</a></li>
+      <li><a href="#event">Food</a></li>
+      <li><a href="/omoss">About</a></li>
+      <li><a href="/signin">Log in</a></li>
+      <li><a href="/signup">Sign up</a></li>
+    </ul>
+  </nav>
+</header>
