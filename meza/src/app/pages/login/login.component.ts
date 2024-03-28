@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { Router, RouterLink } from '@angular/router'; // Ändrat importen till '@angular/router'
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-login',
