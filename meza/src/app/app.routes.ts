@@ -26,7 +26,7 @@ export const routes: Routes = [
     
     { path: 'footer', component: FooterComponent },
     {path: 'search', component: RecipeSearchComponent},
-    {path: 'result' ,component:RecipeListComponent},
+    {path: 'recipes' ,component:RecipeListComponent},
 
     { path: '', redirectTo: '/search', pathMatch: 'full' }, // Omdirigering från rotvägen till söksidan
 
