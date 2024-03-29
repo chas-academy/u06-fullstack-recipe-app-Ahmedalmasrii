@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { SpoonacularService } from '../spoonacular.service';
-import { Router } from '@angular/router';
+import { Router, RouterLink, RouterModule } from '@angular/router';
+import { FormsModule, NgModel } from '@angular/forms';
+
 
 @Component({
   selector: 'app-recipe-search',
   standalone: true,
-  imports: [],
+  imports:[FormsModule,RouterLink],
   templateUrl: './recipe-search.component.html',
   styleUrl: './recipe-search.component.scss'
 })
@@ -14,8 +16,9 @@ export class RecipeSearchComponent implements OnInit {
 
   constructor(private spoonacularService:SpoonacularService,private router:Router){}
 
-  searchReceipes() {
+  searchRecipes() {
     this.spoonacularService.searchRecipes(this.query);
+    this.router.navigate(['recipes']); 
   }
   ngOnInit(): void {
    
