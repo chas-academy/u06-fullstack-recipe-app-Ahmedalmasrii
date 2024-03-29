@@ -3,6 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
 import { HttpClientModule } from '@angular/common/http';
 import { Router, RouterLink } from '@angular/router'; 
+import { Register } from '../models/Sign-up.model';
 
 @Component({
   selector: 'app-sign-up',
@@ -37,17 +38,17 @@ export class SignUpComponent {
   }
 }
 
-export class Register {
-  name: string;
-  email: string;
-  password: string;
-  password_confirmation:string;
+// export class Register {
+//   name: string;
+//   email: string;
+//   password: string;
+//   password_confirmation:string;
 
-  constructor() {
-    this.name ='';
-    this.email = '';
-    this.password = '';
-    this.password_confirmation= '';
+//   constructor() {
+//     this.name ='';
+//     this.email = '';
+//     this.password = '';
+//     this.password_confirmation= '';
 
-  }
-}
+//   }
+// }

@@ -29,12 +29,12 @@
       name="password_confirmation"
       required
     />
-    <div *ngIf="errorMessage" class="error-message">
-      {{ errorMessage }}
-    </div>
     <input type="submit" value="Register" />
     <div class="group">
       <a href="/login">Log in</a>
     </div>
   </form>
 </div>
+@if(errorMessage){
+<span class="errormessage">{{ errorMessage }}</span>
+}
