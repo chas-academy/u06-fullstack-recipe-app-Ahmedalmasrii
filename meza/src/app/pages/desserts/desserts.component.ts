@@ -12,7 +12,7 @@ import { SearchComponent } from '../../search/search.component';
 })
 export class DessertsComponent {
   dishType = "Desserts";
-  recipes?: any;
+  recipes: any[] =[] ;
   constructor(private recipeService: RecipeService, private router: Router) { }
   recieveRecipes(recipes: any[]) {
     this.recipes = recipes
@@ -24,4 +24,5 @@ export class DessertsComponent {
     console.log(extractedId);
     this.router.navigate(['/recipe', extractedId]);
   }
+
 }
