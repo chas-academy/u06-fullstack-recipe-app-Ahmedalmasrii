@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SpoonacularService } from '../spoonacular.service';
+import { RecipeService } from '../services/recipe.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
@@ -17,14 +17,14 @@ export class RecipeListComponent  implements OnInit{
   recipes:any[]=[];
 
 
-  constructor(public spoonacularService:SpoonacularService){}
+  constructor(public recipeService:RecipeService){}
 
 
   ngOnInit(): void {
-    this.spoonacularService.recipes$.subscribe(recipes=>{
-      this.recipes=recipes;
+    // this.recipeService.subscribe((recipes: any[])=>{
+    //   this.recipes=recipes;
       
-    });
+    // });
   }
 
 }
