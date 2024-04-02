@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SpoonacularService } from '../spoonacular.service';
+import { RecipeService } from '../services/recipe.service';
 import { Router, RouterLink, RouterModule } from '@angular/router';
 import { FormsModule, NgModel } from '@angular/forms';
 
@@ -14,12 +14,12 @@ import { FormsModule, NgModel } from '@angular/forms';
 export class RecipeSearchComponent implements OnInit {
   query:string='';
 
-  constructor(private spoonacularService:SpoonacularService,private router:Router){}
+  constructor(private recipeservice:RecipeService,private router:Router){}
 
-  searchRecipes() {
-    this.spoonacularService.searchRecipes(this.query);
-    this.router.navigate(['recipes']); 
-  }
+  // searchRecipes() {
+  //   this.recipeservice.searchRecipes(this.query);
+  //   this.router.navigate(['recipes']); 
+  // }
   ngOnInit(): void {
    
   }
