@@ -5,8 +5,12 @@ import { HomeComponent } from './pages/home/home.component';
 import { OmOssComponent } from './pages/om-oss/om-oss.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { FooterComponent } from './pages/footer/footer.component';
-import { RecipeSearchComponent } from './recipe-search/recipe-search.component';
+
 import { RecipeListComponent } from './recipe-list/recipe-list.component';
+import { authGuard } from './guards/auth.guard';
+import { MainsComponent } from './pages/mains/mains.component';
+import { StartersComponent } from './pages/starters/starters.component';
+import { DessertsComponent } from './pages/desserts/desserts.component';
 
 
 export const routes: Routes = [
@@ -20,13 +24,18 @@ export const routes: Routes = [
 
     { path: 'home', component: HomeComponent },
 
-    { path: 'omoss', component: OmOssComponent },
+    { path: 'omoss', component: OmOssComponent},
 
     { path: 'layout', component: LayoutComponent },
     
     { path: 'footer', component: FooterComponent },
-    {path: 'search', component: RecipeSearchComponent},
-    {path: 'recipes' ,component:RecipeListComponent},
+
+    {path: 'recipe' ,component:RecipeListComponent},
+
+    {path: 'mains' ,component: MainsComponent},
+    {path: 'starter' ,component: StartersComponent , canActivate: [authGuard]},
+    {path: 'dessert' ,component: DessertsComponent , canActivate: [authGuard]},
+
 
     { path: '', redirectTo: '/search', pathMatch: 'full' }, // Omdirigering från rotvägen till söksidan
 
