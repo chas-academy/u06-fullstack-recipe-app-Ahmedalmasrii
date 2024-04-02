@@ -1,13 +1,39 @@
-import { HttpClient } from '@angular/common/http';
+
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { Login } from '../models/Login.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  constructor(private http: HttpClient) {}
+  private tokenState: BehaviorSubject<boolean>
+
+  constructor(private http: HttpClient) {
+     const initialTokenState = !! localStorage.getItem('token')
+     this.tokenState = new BehaviorSubject<boolean>(initialTokenState);
+
+    }
+    getTokenState(): Observable<boolean> {
+      return this.tokenState.asObservable();
+    }
+    updateTokenState(): void {
+      const hasToken = !!localStorage.getItem('token');
+      this.tokenState.next(hasToken);
+    }
+
+  // private loggedIn = new BehaviorSubject<any>(false)
+
+  
+  // loggedIn$ = this.loggedIn.asObservable();
+
+  // updateLoginState(loginState: any) {
+  //   this.loggedIn.next(loginState);
+  // }
+  // getLoginStatus() {
+  //   return this.loggedIn.value.loginState;
+  // }
 
   login(loginObj:Login) {
     if (!loginObj) return
@@ -19,4 +45,17 @@ export class AuthService {
     const url = 'http://127.0.0.1:8000/api/register';
     return this.http.post(url, userData);
   }
+
+  postLogout(token: any){
+    const headers =  {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+  }
+    console.log(headers)
+    return this.http.post<any>('http://127.0.0.1:8000/api/logout' ,{ }, {
+      headers
+  } )
+  }
 }
+
