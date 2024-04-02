@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { AuthService } from '../services/auth.service';
+import { AuthService } from '../../services/auth.service';
 import { HttpClientModule } from '@angular/common/http';
 import { Router, RouterLink } from '@angular/router'; 
-import { Register } from '../models/Sign-up.model';
+import { Register } from '../../models/Sign-up.model';
 
 @Component({
   selector: 'app-sign-up',
