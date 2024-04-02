@@ -78,9 +78,9 @@ export class LoginComponent {
         console.log(res);
         if (res.token) {
           localStorage.setItem('token', res.token);
-
+          this.authService.updateTokenState()
           console.log(localStorage.getItem('token'));
-
+          
           alert('Login Success');
           this.router.navigateByUrl('/home')
 
