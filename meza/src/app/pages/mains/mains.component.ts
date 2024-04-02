@@ -1,16 +1,18 @@
 import { Component } from '@angular/core';
 import { RecipeService } from '../../services/recipe.service';
 import { Router } from '@angular/router';
+import { SearchComponent } from '../../search/search.component';
 
 @Component({
   selector: 'app-mains',
   standalone: true,
-  imports: [],
+  imports: [SearchComponent],
   templateUrl: './mains.component.html',
   styleUrl: './mains.component.scss'
 })
+
 export class MainsComponent {
-  dishType = "Dinner";
+  dishType = "Main course";
   recipes?: any;
   constructor(private recipeService: RecipeService, private router: Router) { }
   recieveRecipes(recipes: any[]) {

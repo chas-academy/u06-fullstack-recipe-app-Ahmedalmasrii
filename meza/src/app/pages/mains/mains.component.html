@@ -1,7 +1,7 @@
-
+<app-search [dishType]="dishType" (recipesEmitter)="recieveRecipes($event)"></app-search>
 <div class="">
     @for (recipe of recipes; track recipe) {
-    <article (click)="goToDetails(recipe)" class="main">
+    <article (click)="goToDetails(recipe)" class="starter">
         <img src="{{recipe.image}}" class="">
         <h3 class="">{{ recipe.label }}</h3>
         <p class="">{{recipe.self}}</p>
