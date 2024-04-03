@@ -1,30 +1,33 @@
-.dessert-section {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr)); 
-    gap: 20px; 
-    justify-content: center; 
-    padding-top: 10px;
 
-    .dessert {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        width: fit-content;
+@import "../../../../node_modules/flowbite/dist/flowbite.css";
 
-        img {
-            max-width: 100%; 
-            height: auto; 
-            margin-bottom: 10px; 
-        }
+// .dessert-section {
+//     display: grid;
+//     grid-template-columns: repeat(auto-fill, minmax(500px, 1fr)); 
+//     gap: 20px; 
+//     justify-content: center; 
+//     padding-top: 10px;
 
-        h3 {
-            margin-bottom: 5px; 
-        }
+//     .dessert {
+//         display: flex;
+//         flex-direction: column;
+//         align-items: center;
+//         text-align: center;
+//         width: fit-content;
 
-        p, .ingred {
-            margin-bottom: 10px; 
-            width: fit-content;
-        }
-    }
-}
+//         img {
+//             max-width: 100%; 
+//             height: auto; 
+//             margin-bottom: 10px; 
+//         }
+
+//         h3 {
+//             margin-bottom: 5px; 
+//         }
+
+//         p, .ingred {
+//             margin-bottom: 10px; 
+//             width: fit-content;
+//         }
+//     }
+// }
