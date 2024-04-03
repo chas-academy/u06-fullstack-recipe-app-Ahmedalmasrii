@@ -30,7 +30,7 @@ export const routes: Routes = [
     
     { path: 'footer', component: FooterComponent },
 
-    {path: 'recipe' ,component:RecipeListComponent , canActivate: [authGuard]},
+    {path: 'recipe/:id' ,component:RecipeListComponent , canActivate: [authGuard]},
 
     {path: 'mains' ,component: MainsComponent , canActivate: [authGuard]},
     {path: 'starter' ,component: StartersComponent , canActivate: [authGuard]},
