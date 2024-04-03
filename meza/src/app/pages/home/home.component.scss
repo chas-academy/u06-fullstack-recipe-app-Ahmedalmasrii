@@ -1,2 +1,86 @@
 
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  
+  .about-section {
+    animation: fadeIn 2s ease-out;
+    padding: 50px;
+    height: 100%;
+    text-align: center;
+   
+    padding-top: 10px;
+    color: #333;
+
+    margin-top: 10px;
+  
+    h1 {
+      font-size: 2.5em;
+    }
+  
+    p {
+      margin: 20px 0;
+      font-size: 1.2em;
+    }
+  }
+  
+  .team {
+    margin: 50px 0;
+    text-align: center;
+    animation: fadeIn 2.5s ease-out;
+  
+    h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+  
+    .team-member {
+      margin: 20px;
+      display: inline-block;
+      width: 300px;
+      background-color: #fff;
+      color: #555;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+      &:hover {
+        transform: translateY(-5px) scale(1.05);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      }
+  
+      img {
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        width: 100%;
+        height: auto;
+      }
+  
+      .name {
+        font-size: 1.5em;
+        margin-top: 15px;
+      }
+  
+      .role {
+        margin: 5px 0 20px 0;
+        font-size: 1em;
+        color: #777;
+      }
+    }
+  }
   
