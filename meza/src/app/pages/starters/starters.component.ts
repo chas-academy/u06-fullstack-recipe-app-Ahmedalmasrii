@@ -5,20 +5,20 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-mains',
   standalone: true,
-  imports: [SearchComponent,],
+  imports: [SearchComponent],
   templateUrl: './starters.component.html',
-  styleUrl: './starters.component.scss'
+  styleUrl: './starters.component.scss',
 })
 export class StartersComponent {
-  dishType = "Starter";
+  dishType = 'Starter';
   recipes?: any;
-  constructor(private recipeService: RecipeService, private router: Router) { }
+  constructor(private recipeService: RecipeService, private router: Router) {}
   recieveRecipes(recipes: any[]) {
-    this.recipes = recipes
+    this.recipes = recipes;
   }
   goToDetails(recipe: any) {
-    let startIndex = recipe.self.indexOf("/v2/") + 4; 
-    let endIndex = recipe.self.indexOf("?");
+    let startIndex = recipe.self.indexOf('/v2/') + 4;
+    let endIndex = recipe.self.indexOf('?');
     let extractedId = recipe.self.substring(startIndex, endIndex);
     console.log(extractedId);
     this.router.navigate(['/recipe', extractedId]);
