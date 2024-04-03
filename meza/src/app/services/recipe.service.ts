@@ -58,5 +58,10 @@ export class RecipeService {
       this.app_key;
     return this.http.get<any>(url, this.httpOptions);
   }
+  getRecipeByUrl(url:string){
+    return this.http.get<any>(url,this.httpOptions)
+  }
 }
+
+//handle the data in the component 
 
