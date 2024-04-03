@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { RecipeService } from '../services/recipe.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-recipe-list',
@@ -12,19 +12,24 @@ import { RouterLink } from '@angular/router';
   styleUrl: './recipe-list.component.scss'
 })
 export class RecipeListComponent  implements OnInit{
+  id: string  = '';
+  recipe: any;
 
-  
-  recipes:any[]=[];
+  constructor(private route: ActivatedRoute, private recipeService: RecipeService){}
 
+  ngOnInit(){
+    this.route.params.subscribe((params) => {
+      this.id = params['id'];
+    });
 
-  constructor(public recipeService:RecipeService){}
+    this.getRecipe()
+  }
 
-
-  ngOnInit(): void {
-    // this.recipeService.subscribe((recipes: any[])=>{
-    //   this.recipes=recipes;
-      
-    // });
+  getRecipe(){
+    this.recipeService.getRecipeById(this.id).subscribe(result=> {
+      console.log(result)
+      this.recipe = result.recipe
+    })
   }
 
 }
