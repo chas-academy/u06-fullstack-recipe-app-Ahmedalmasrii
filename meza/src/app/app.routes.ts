@@ -30,9 +30,9 @@ export const routes: Routes = [
     
     { path: 'footer', component: FooterComponent },
 
-    {path: 'recipe' ,component:RecipeListComponent},
+    {path: 'recipe' ,component:RecipeListComponent , canActivate: [authGuard]},
 
-    {path: 'mains' ,component: MainsComponent},
+    {path: 'mains' ,component: MainsComponent , canActivate: [authGuard]},
     {path: 'starter' ,component: StartersComponent , canActivate: [authGuard]},
     {path: 'dessert' ,component: DessertsComponent , canActivate: [authGuard]},
 
