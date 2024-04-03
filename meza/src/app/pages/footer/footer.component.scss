@@ -11,7 +11,7 @@ $font-family-header: 'Special Elite', cursive;
 .footer {
   position: relative;
   width: 100%;
-  background: #3586ff;
+  background: $header-bg;
   
   min-height: 100px;
   padding: 20px 50px;
