@@ -63,5 +63,3 @@ export class RecipeService {
   }
 }
 
-//handle the data in the component 
-
