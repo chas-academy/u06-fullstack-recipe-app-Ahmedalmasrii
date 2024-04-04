@@ -2,9 +2,9 @@
   class="naven bg-gray-600 border-gray-200 dark:bg-gray-900 dark:border-gray-700"
 >
   <div
-    class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
+    class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-3"
   >
-    <a  class="flex items-center space-x-3 rtl:space-x-reverse">
+    <a class="flex items-center space-x-3 rtl:space-x-reverse">
       <span
         class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"
         >Meza</span
@@ -12,48 +12,47 @@
     </a>
 
     <ul
-      class="flex flex-row font-medium p-4 md:p-2 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700"
+      class="flex flex-row font-medium py-2 px-0.5 md:p-2 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700"
     >
       <li>
         <a
-          routerLink='/home'
-          class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500 dark:bg-blue-600 md:dark:bg-transparent"
+          routerLink="/home"
+          class="block py-2 px-2 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500 dark:bg-blue-600 md:dark:bg-transparent"
           aria-current="page"
           >Home</a
         >
       </li>
-      <li></li>
       <li>
         <a
-        routerLink='/starter'         
-         class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+          routerLink="/starter"
+          class="block py-2 px-2 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
           >Starter</a
         >
       </li>
       <li>
         <a
-        routerLink='/mains'
-          class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+          routerLink="/mains"
+          class="block py-2 px-2 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
           >Main</a
         >
       </li>
       <li>
         <a
-        routerLink='/dessert'
-          class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+          routerLink="/dessert"
+          class="block py-2 px-2 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
           >Dessert</a
         >
       </li>
       <li>
         <a
-        routerLink='/omoss'
-          class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+          routerLink="/omoss"
+          class="block py-2 px-2 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
           >About us</a
         >
       </li>
 
       @if (!loggedIn){
-      <li>
+      <li class="list-item px-2">
         <a
           routerLink="/login"
           routerLinkActive="active"
@@ -61,7 +60,7 @@
           >Log in</a
         >
       </li>
-      <li>
+      <li class="list-item px-2">
         <a
           routerLink="/signup"
           routerLinkActive="active"
@@ -70,7 +69,7 @@
         >
       </li>
       } @else {
-      <li class="list-item cursor-pointer" (click)="logout()">Logout</li>
+      <li class="list-item px-2 cursor-pointer" (click)="logout()">Logout</li>
 
       }
     </ul>
