@@ -29,7 +29,6 @@ export class AuthService {
     console.log(loginObj);
     return this.http.post<any>('https://u06-fullstack-recipe-app-ahmedalmasrii-4.onrender.com/api/login', loginObj)
   }
-
   registerUser(userData: any): Observable<any> {
     const url = 'https://u06-fullstack-recipe-app-ahmedalmasrii-4.onrender.com/api/register';
     return this.http.post(url, userData);
