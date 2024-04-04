@@ -16,9 +16,6 @@ export class SearchComponent implements OnInit {
   @Output() recipesEmitter: EventEmitter<any[]> = new EventEmitter<any[]>();
   querySearch = '';
   selectedFood ='';
-  // pork = false;
-  // soy = false;
-  // gluten = false;
   recipes: any
 
   foodList = [
@@ -61,9 +58,7 @@ export class SearchComponent implements OnInit {
 
   constructor(private recipeService: RecipeService) { }
   onSearch() {
-    // const porkQuery = this.pork ? 'pork-free' : ""
-    // const soyQuery = this.soy ? 'soy-free' : ""
-    // const glutenQuery = this.gluten ? "gluten-free" : ""
+
     this.recipeService.getRecipes(this.querySearch, this.dishType, this.selectedFood).subscribe((res) => {
       let recipeArray: any[];
       recipeArray = res.hits;
