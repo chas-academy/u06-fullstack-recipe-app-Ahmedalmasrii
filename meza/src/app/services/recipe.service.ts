@@ -18,9 +18,6 @@ export class RecipeService {
   getRecipes(
     searchterm: string,
     dishType: string,
-    // vegan: string = '',
-    // dairy: string = '',
-    // gluten: string = ''
     food: string = ''
   ): Observable<any> {
     let url =
@@ -35,16 +32,7 @@ export class RecipeService {
       '&dishType=' +
       dishType +
       '&random=true'
-    // if (vegan) {
-    //   url += '&health=vegan';
-    // }
-    // if (dairy) {
-    //   url += '&health=dairy-free';
-    // }
-    // if (gluten) {
-    //   url += '&health=gluten-free';
-    // }
-
+    
     if (food) {
       url += '&food=' + food;
       }
